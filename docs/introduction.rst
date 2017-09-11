@@ -14,12 +14,12 @@ The command line interface will print out a prompt, after which commands can be
 typed. After the command has completed, the prompt will be printed out again,
 indicating that the shell is ready to accept new commands.
 
-An important point to note is that Unix is case-sensitive: a file called Data
-is not the same as a file called data.
+An important point to note is that Unix is case-sensitive: a file called
+``Data`` is not the same as a file called ``data``.
 
 The command line prompt can vary from system to system, but usually consists of
-some text followed by a character such as ``$``, ``#`` or ``>``. In many
-systems, it might look like this: 
+some text followed by the ``$`` character. In many systems, it might look like
+this: 
 
 .. code-block:: console
 
@@ -30,9 +30,11 @@ system you are currently logged onto, and path indicates your current working
 directory. Note that this can be configured differently, do not be surprised or
 alarmed if it looks different on your system.
 
-If the prompt ends with a ``#``, this most likely means that you are logged in as
-root (the super-user). If this is the case, please log out before anything bad
-happens - unless you know what you are doing.
+.. WARNING::
+
+  If the prompt ends with a ``#``, this most likely means that you are logged
+  in as root (the super-user). If this is the case, please log out before doing
+  anything irreversible - unless you know what you are doing.
 
 .. NOTE::
 
@@ -41,46 +43,45 @@ happens - unless you know what you are doing.
   - the shell: the program that actually interprets the commands that are typed
     in, and takes the appropriate action. There are a number of different
     shells available, each with their own syntax rules. The default shell in
-    MR2 is the Bourne Again Shell (bash).
+    most Linux distributions is the Bourne Again Shell (bash). This is also the
+    default on macOS and MSYS2 (used in Windows installations)
 
   - the terminal: the program responsible for displaying the output of the
     shell, and what the user types in. There are a number of different
-    terminals available, each with different levels of sophistication. In MR2,
-    you will probably be using the konsole terminal program.
+    terminals available, each with different levels of sophistication. 
 
   This leads to a bewildering array of combinations between the different
-  shells and terminal programs available. Thankfully, in MR2, you will almost
-  always be using konsole as the terminal and bash as the shell, and this is
-  what you should learn how to use.
+  shells and terminal programs available. 
 
 
 How to access the command line
 ------------------------------
 
-There are many ways to start a command line session. In MR2, the easiest way to
-start a session is by launching a program called konsole (the default KDE
-terminal). This can be done in a number of ways:
+There are many ways to start a command line session, depending on your OS and
+desktop environment. 
 
-Click on the shell icon, which should be located either on the toolbar at the
-bottom of the screen, or on your desktop. It should look something like that
-shown on the right. Bear in mind that the icons on your desktop will depend on
-your current theme, etc. and might therefore differ substantially.  Find the
-'konsole', 'shell', or 'terminal' entry in the applications menu, which you
-should find located on the extreme left of the toolbar at the bottom of your
-screen. An example of what this might look like is shown on the right. Note
-that your menu structure might look significantly different from this, and you
-might need to look in the other subfolders to find it.
+GNU/Linux
+.........
 
-Click on the "MR2 applications" icon. This should be on your desktop, and look
-like that shown here. This will open a window with a number of other icons, one
-of which should be the terminal icon.
+Different Linux distributions include different `desktop environments <de>`_.
+For instance `Ubuntu <https://www.ubuntu.com/>`_ installations will typically be
+running `Unity <https://unity.ubuntu.com/>`_, `Red Hat
+<https://www.redhat.com/>`_ and
+derivatives will typically be running `GNOME <https://www.gnome.org/>`_, while
+`SuSE <https://www.suse.com/>`_ would typically come with `KDE
+<https://www.kde.org/>`_. 
 
-Launch the konsole program directly using the "Run Command" utility. This can
-be accessed either via the applications menu (see above), or directly by
-pressing the Alt+F2 key combination. This should open a small window into which
-commands can be typed directly (this is essentially a mini command line). The
-terminal program can then be launched by entering konsole in the box provided.
+Given the many different possible configurations, it is impossible to give
+specific instructions for each case. Nonetheless, in general you ought to be
+able to identify an application called 'Terminal' or similar in the desktop's
+main menu.
 
+macOS
+.....
+
+
+Windows (MSYS2)
+...............
 
 
 Basic Structure of a command
@@ -102,7 +103,7 @@ series of 'words' specified in the right order so that the program can
 understand what is required of it.
 
 For example, you need to supply two arguments to copy a file: the original file
-name, and the name of the file to be created. The program to do this, cp,
+name, and the name of the file to be created. The program to do this, `cp`_,
 expects the first argument to be the name of the file to be copied, and the
 second argument to be the name of the duplicate file to be created. If it does
 not find two arguments, it will produce an error message.
@@ -129,11 +130,6 @@ additional arguments should be entered immediately after the option itself.
 
 Below are some typical command examples.  (the ``$`` symbol indicates the
 prompt):
-
-.. code-block:: console
-
-  $ command name argument -option additional argument required by a preceeding option
-
 
 - To list the contents of the current working directory:
 
@@ -175,9 +171,10 @@ As previsouly mentioned, the command actually typed in will first be split
 using spaces as boundaries. In certain cases, it may be necessary to provide
 arguments that contain spaces within them. A common example of this is when
 file names contain spaces (note that this should be avoided, especially since
-SPM is often not able to deal with these). This is obviously a problem, since
-an argument with a space in it will be interpreted as two separate arguments.
-To supply an argument with a space in it, use the following syntax.
+other programs and scripts often have issues dealing with these).  This is
+obviously a prblem, since an argument with a space in it will be interpreted as
+two separate arguments.  To supply an argument with a space in it, use the
+following syntax.
 
 As an example, if we need to supply the argument "argument with spaces" to some
 command, we can use any of the following:
@@ -189,3 +186,6 @@ command, we can use any of the following:
 In the last example, the backslash character tells the shell to ignore the
 subsequent space character and treat it as a normal character.
 
+
+.. _cp: http://man7.org/linux/man-pages/man1/cp.1.html
+.. _de: https://en.wikipedia.org/wiki/Desktop_environment
