@@ -128,6 +128,9 @@ normally output.
 Command line options can also require additional arguments. In this case, these
 additional arguments should be entered immediately after the option itself.
 
+Examples
+........
+
 Below are some typical command examples.  (the ``$`` symbol indicates the
 prompt):
 
