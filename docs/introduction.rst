@@ -26,9 +26,9 @@ this:
   username@machine:path $
 
 where username corresponds to your own, machine corresponds to the name of the
-system you are currently logged onto, and path indicates your current working
-directory. Note that this can be configured differently, do not be surprised or
-alarmed if it looks different on your system.
+system you are currently logged onto, and path indicates your current `working
+directory <wd>`_. Note that this can be configured differently, do not be
+surprised or alarmed if it looks different on your system.
 
 .. WARNING::
 
@@ -190,5 +190,5 @@ In the last example, the backslash character tells the shell to ignore the
 subsequent space character and treat it as a normal character.
 
 
-.. _cp: http://man7.org/linux/man-pages/man1/cp.1.html
+.. _cp: https://linux.die.net/man/1/cp
 .. _de: https://en.wikipedia.org/wiki/Desktop_environment
