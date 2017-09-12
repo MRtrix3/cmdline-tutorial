@@ -152,16 +152,19 @@ A few shortcuts have special significance, and you should learn to use them, or
 at least know of them. These are:
 
 - ``~`` (tilda):
+
   shorthand for your home folder. For example, I could refer to the ``project`` folder
   as ``~/data/project``, since my home folder is ``/home/donald``.
 
 - ``.`` (single full stop): 
+
   the current directory. For example, if my current working directory is
   ``/home/donald``, I can refer to the ``project`` folder by specifying
   ``./data/project``, or even ``data/./project``. Although this may not look
   very useful, there are occasions when it is helpful (see examples below).
 
 - ``..`` (double full stop): 
+
   the parent folder of the current directory. For example, if my current
   working directory is ``/home/donald/Desktop``, I can still refer to the
   ``data`` folder using the relative path ``../data``. This shortcut essentially means
