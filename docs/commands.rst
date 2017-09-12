@@ -14,7 +14,7 @@ it means that any number of that type of argument can be provided, and each
 will be processed in turn. In addition, any options that are of particular
 interest are listed in the corresponding section for each command. 
 
-pwd - print working directory
+``pwd``: print working directory
 -----------------------------
 
 .. code-block:: console
@@ -24,7 +24,7 @@ pwd - print working directory
 Print the current working directory onto the screen.
 
 
-cd - change working directory
+``cd``: change working directory
 -----------------------------
 
 .. code-block:: console
@@ -51,7 +51,7 @@ useful to rapidly change back and forth between folders, e.g.:
   
 
 
-ls - list files
+``ls``: list files
 ---------------
 
 .. code-block:: console
@@ -74,7 +74,7 @@ Options:
   provide a long listing, including file size, ownership, permissions, and modification date.
 
 
-cp - copy files or folders
+``cp``: copy files or folders
 --------------------------
 
 .. code-block:: console
@@ -102,7 +102,7 @@ Options:
   recursive copy: use this option to copy an entire folder and its contents.
 
 
-mv - move/rename files or folders
+``mv``: move/rename files or folders
 ---------------------------------
 
 .. code-block:: console
@@ -183,4 +183,5 @@ need to refer back to the sections on `paths`_, using special filenames, or usin
 
 
 .. _alias: http://linuxcommand.org/lc3_man_pages/aliash.html
+
 

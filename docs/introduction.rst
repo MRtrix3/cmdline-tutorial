@@ -175,7 +175,7 @@ using spaces as boundaries. In certain cases, it may be necessary to provide
 arguments that contain spaces within them. A common example of this is when
 file names contain spaces (note that this should be avoided, especially since
 other programs and scripts often have issues dealing with these).  This is
-obviously a prblem, since an argument with a space in it will be interpreted as
+obviously a problem, since an argument with a space in it will be interpreted as
 two separate arguments.  To supply an argument with a space in it, use the
 following syntax.
 
