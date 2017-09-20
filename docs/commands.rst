@@ -134,7 +134,7 @@ need to refer back to the sections on `paths`_, using special filenames, or usin
 
 - To change your current working directory to its parent folder (move one branch down the directory tree):
 
-  .. code-block::console
+  .. code-block:: console
   
     $ cd ..
 
@@ -151,35 +151,35 @@ need to refer back to the sections on `paths`_, using special filenames, or usin
   
   .. code-block:: console
 
-  $ ls controls/ns*.png
+    $ ls controls/ns*.png
 
 - To move the file ``data.mat``, residing in the current working directory,
   into the parent folder of that directory:
 
   .. code-block:: console
 
-  $ mv data.mat ..
+    $ mv data.mat ..
 
   
 - To copy the file ``info.txt`` from the folder ``important`` into the current working directory:
 
   .. code-block:: console
 
-  $ cp important/info.txt .
+    $ cp important/info.txt .
 
 - To copy all shell script files from the ``data`` folder in your home
   directory into the ``scripts`` folder in the current working directory:
 
   .. code-block:: console
   
-  $ cp ~/data/*.hdr scripts/
+    $ cp ~/data/*.hdr scripts/
 
 - To copy all images for study 3 of patient *Joe Bloggs* from the ``/data``
   folder into the current working directory:
 
   .. code-block:: console
 
-  $ cp /data/bloggsj_010203_123/*-3-*.ima .
+    $ cp /data/bloggsj_010203_123/*-3-*.ima .
 
 
 .. _alias: http://linuxcommand.org/lc3_man_pages/aliash.html
