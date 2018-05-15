@@ -1,25 +1,26 @@
 .. _paths:
 
-Specifying filenames
-====================
+Specifying filenames: paths
+===========================
 
 Filenames are often supplied to programs as arguments. For this reason, it is
 essential to have a good understanding of how files are specified on the
-command line.
+command line. In Unix, a *path* is a term commonly used almost interchangeably
+with *filename*, for reasons that will hopefully become clear in this section.
 
 Files and folders
 -----------------
 
 Files and folders are stored on computers using a folder or directory
 structure. For example, on a Windows computer, you might find a folder called
-'MyDocuments', within which there might be a 'data' folder, and within that
+``MyDocuments``, within which there might be a ``data`` folder, and within that
 some more folders, etc. Specifying a file or folder is simply a matter of
 providing enough information to uniquely identify it.
 
 The easiest way to visualise the directory structure is to think of it as a
-tree. If you listed the contents of the root folder (the root of the tree), you
+*tree*. If you listed the contents of the root folder (the root of the tree), you
 would find a number of other folders (the main branches). For example, one of
-these folders would be the home folder, where user accounts are kept. These
+these folders would be the ``home`` folder, where user accounts are kept. These
 folders might contain more folders (smaller branches) and/or files (leaves), as
 illustrated below::
 
@@ -57,20 +58,20 @@ illustrated below::
   │       └── Documents/
   ├── usr/
   └── var/
-  
+
 
 Here, the folder called ``project`` can be uniquely identified by starting from
 the root folder, going into ``home``, then ``donald``, ``data``, and finally
-``project``.  This process can be thought of as specifying the path to the file
+``project``.  This process can be thought of as specifying the *path* to the file
 or folder of interest. In fact, this is the exact term used in Unix jargon,
 essentially meaning 'an unambiguous file name'. Thus, specifying a filename
-boils down to providing a unique, unambiguous path to the file.
+boils down to providing a unique, unambiguous *path* to the file.
 
 
 .. NOTE::
 
   In this context, *directory* and *folder* are synonymous.
- 
+
 
 Absolute paths
 --------------
@@ -85,9 +86,9 @@ in the figure above is::
 
 This simply means: starting from the root folder (``/``), go into folder ``home``,
 then ``donald``, then ``data``, to find ``project``. This is an example of an
-absolute path, because the start point of the path (the root folder) has been
+*absolute path*, because the start point of the path (the root folder) has been
 specified within the filename. Thus, an absolute path must start with a forward
-slash - if it does not, it becomes a relative path, explained below.  
+slash -- if it does not, it becomes a relative path, explained below.
 
 .. _wd:
 
@@ -107,8 +108,8 @@ you can imagine that you have climbed up branch ``home``, then up branch
 you're sitting there, you have direct access to all the files and folders that
 spring from that branch.
 
-Your working directory can be specified with the command `cd`_, and queried using
-the command `pwd`_ (both described in `commands`_).
+Your working directory can be specified with the command :ref:`cd <cd>`, and queried using
+the command :ref:`pwd <pwd>` (both described in :ref:`commands`).
 
 Relative paths
 --------------
@@ -123,14 +124,13 @@ For example, the working directory might currently be
 files and folders. Since the file ``analysis_script.sh``  is in the current
 working directory, it can be referred to unambiguously using the relative path
 ``analysis_script.sh``, rather than its full absolute path
-``/home/donald/data/project/analysis_script.sh``. As you can see, this requires
-considerably less typing.
+``/home/donald/data/project/analysis_script.sh`` -- that's a lot less typing.
 
 When you specify a relative path, it will actually be converted to an absolute
 path, simply by taking the current working directory (an absolute path),
 appending a forward slash, and appending the relative path you supplied after
 that. For example, if you supply the relative path ``analysis_script.sh``, the
-system will add up the current working directory ``/home/donald/data/project``
+system will (internally) add up the current working directory ``/home/donald/data/project``
 + ``/`` + ``analysis_script.sh`` to give the absolute path.
 
 Since the system simply adds the relative path to the working directory, you
@@ -161,7 +161,7 @@ at least know of them. These are:
   the current directory. For example, if my current working directory is
   ``/home/donald``, I can refer to the ``project`` folder by specifying
   ``./data/project``, or even ``data/./project``. Although this may not look
-  very useful, there are occasions when it is helpful (see examples below).
+  very useful, there are occasions when it becomes important (see examples below).
 
 - ``..`` (double full stop): 
 
@@ -177,10 +177,10 @@ at least know of them. These are:
     ~/Desktop/../data
 
 Using wildcards
---------------
+---------------
 
 There are a number of characters that have special meaning to the shell. Some
-of these characters are referred to as wildcards, and their purpose is to ask
+of these characters are referred to as *wildcards*, and their purpose is to ask
 the shell to find all filenames that match the wildcard, and expand them on the
 command line. Although there are a number of wildcards, the only one that will
 be detailed here is the ``*`` character.
@@ -192,13 +192,13 @@ pattern used to be. This can be better understood using some examples.
 
 Imagine that within the current working directory, we have the files ``file1.txt``,
 ``file2.txt``, ``file3.txt``, ``info.txt``, ``image1.dat``, and ``image2.dat``. If we simply list
-the files (using the `ls`_ command), we would see:
+the files (using the :ref:`ls <ls>` command), we would see:
 
 .. code-block:: console
 
   $ ls
-  file1.txt   file2.txt   file3.txt 
-  image1.dat  image2.dat  info.txt 
+  file1.txt   file2.txt   file3.txt
+  image1.dat  image2.dat  info.txt
 
 If we only wanted to list the text files, we could use a wildcard, and specify
 that we are only interested in files that end with ``.txt``:
@@ -218,9 +218,43 @@ case, we could type:
 
 This use of wildcards becomes very useful when dealing with folders containing
 large numbers of similar files, and only a subgroup of them is of interest. See
-the `here <examples>`__ for more relevant examples.
+the :ref:`here <examples>` for more relevant examples.
 
+.. NOTE::
 
-.. _cp: http://man7.org/linux/man-pages/man1/cd.1p.html
-.. _ls: https://linux.die.net/man/1/ls
-.. _pwd: https://linux.die.net/man/1/pwd
+  It will be important later on to understand exactly what is going on here.
+  Typing a command such as:
+
+  .. code-block:: console
+
+    $ ls *.txt
+
+  does *not* instruct the :ref:`ls <ls>` command to find all files that match
+  the wildcard. The wildcard matching is actually performed by the *shell*,
+  before the :ref:`ls <ls>` command is itself invoked. What this means is that
+  the *shell* takes the command you typed, modifies it by *expanding* the
+  arguments, and invokes the corresponding command on your behalf. In the case
+  above, this means that the command actually invoked will be:
+
+  .. code-block:: console
+
+    $ ls file1.txt file2.txt file3.txt info.txt
+
+  In other words, your *single* argument containing a wildcard is expanded into
+  multiple matching arguments by the *shell*.
+
+  As another example, a command like:
+
+  .. code-block:: console
+
+    $ cp *.dat
+
+  will be expanded to:
+
+  .. code-block:: console
+
+    $ cp image1.dat image2.dat
+
+  which will cause ``image2.dat`` to be *overwritten* with the contents of
+  ``image1.txt`` -- presumably causing irretrievable loss of data. In other
+  words: think carefully about what you're typing...

@@ -14,8 +14,11 @@ it means that any number of that type of argument can be provided, and each
 will be processed in turn. In addition, any options that are of particular
 interest are listed in the corresponding section for each command. 
 
+
+.. _pwd:
+
 ``pwd``: print working directory
------------------------------
+--------------------------------
 
 .. code-block:: console
 
@@ -24,8 +27,10 @@ interest are listed in the corresponding section for each command.
 Print the current working directory onto the screen.
 
 
+.. _cd:
+
 ``cd``: change working directory
------------------------------
+--------------------------------
 
 .. code-block:: console
 
@@ -51,8 +56,10 @@ useful to rapidly change back and forth between folders, e.g.:
   
 
 
+.. _ls:
+
 ``ls``: list files
----------------
+------------------
 
 .. code-block:: console
 
@@ -74,8 +81,10 @@ Options:
   provide a long listing, including file size, ownership, permissions, and modification date.
 
 
+.. _cp:
+
 ``cp``: copy files or folders
---------------------------
+-----------------------------
 
 .. code-block:: console
 
@@ -102,8 +111,12 @@ Options:
   recursive copy: use this option to copy an entire folder and its contents.
 
 
+
+
+.. _mv:
+
 ``mv``: move/rename files or folders
----------------------------------
+------------------------------------
 
 .. code-block:: console
 
@@ -130,7 +143,7 @@ Examples of typical command use
 
 Below are some examples of commands in typical use, illustrating some of the
 concepts explained in this document. To fully understand the examples, you may
-need to refer back to the sections on `paths`_, using special filenames, or using wildcards.
+need to refer back to the sections on :ref:`paths`, using special filenames, or using wildcards.
 
 - To change your current working directory to its parent folder (move one branch down the directory tree):
 

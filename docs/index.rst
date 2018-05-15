@@ -8,5 +8,7 @@ A brief introduction to the Unix command-line
    introduction
    paths
    commands
+   customising
+   examples
    tips
 
