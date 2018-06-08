@@ -9,7 +9,7 @@ A brief introduction to the Unix command-line
    paths
    commands
    inner_workings
-   customising
    examples
    tips
+   customising
 
