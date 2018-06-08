@@ -3,6 +3,22 @@
 Introduction
 ============
 
+The purpose of this introductory guide is to provide a gentle explanation of
+concepts fundamental to using the Unix command-line, in a manner that will
+hopefully be accessible to beginners. It relies heavily on small examples to
+illustrate these ideas with hopefully relevant situations. It does *not* provide
+a comprehensive description of everything that can be done with the Unix
+command-line, and does not even mention most of the many useful commands
+available on any Unix system. The hope is that by explaining the concepts
+behind how things actually work, readers will quickly be able to figure out the rest by themselves, and find out anything else they might need from the
+enormous amount of excellent documentation available online. It's only a Google
+search away -- but hopefully this document will help you to figure out what to
+ask in the first place.
+
+
+What is the command-line?
+-------------------------
+
 The command line is simply a way of passing instructions to the computer. It is
 a text-only interface, and commands are supplied to the shell by typing them in
 and pressing the return key. Any output produced by these commands is printed
@@ -41,8 +57,8 @@ system.
 
   A session will typically involve two separate programs:
 
-  - the **shell**: the program that actually interprets the commands that are typed
-    in, and takes the appropriate action. There are a number of different
+  - the **shell**: the program that actually interprets the commands that are
+    typed in, and takes the appropriate action. There are a number of different
     shells available, each with their own syntax rules. The default shell in
     most Linux distributions is the Bourne Again Shell (bash). This is also the
     default on macOS and MSYS2 (used in Windows installations), and for this
@@ -66,12 +82,11 @@ desktop environment.
 - **GNU/Linux**
 
   Different Linux distributions include different `desktop environments <de>`_.
-  For instance `Ubuntu <https://www.ubuntu.com/>`_ installations will typically be
-  running `Unity <https://unity.ubuntu.com/>`_, `Red Hat
-  <https://www.redhat.com/>`_ and
-  derivatives will typically be running `GNOME <https://www.gnome.org/>`_, while
-  `SuSE <https://www.suse.com/>`_ would typically come with `KDE
-  <https://www.kde.org/>`_. 
+  For instance `Ubuntu <https://www.ubuntu.com/>`_ installations will typically
+  be running `Unity <https://unity.ubuntu.com/>`_, `Red Hat
+  <https://www.redhat.com/>`_ and derivatives will typically be running `GNOME
+  <https://www.gnome.org/>`_, while `SuSE <https://www.suse.com/>`_ would
+  typically come with `KDE <https://www.kde.org/>`_. 
   
   Given the many different possible configurations, it is impossible to give
   specific instructions for each case. Nonetheless, in general you ought to be
@@ -111,10 +126,10 @@ series of 'words' specified in the right order so that the program can
 understand what is required of it.
 
 For example, you need to supply two arguments to copy a file: the original file
-name, and the name of the file to be created. The program to do this, :ref:`cp <cp>`,
-expects the first argument to be the name of the file to be copied, and the
-second argument to be the name of the duplicate file to be created. If it does
-not find two arguments, it will produce an error message.
+name, and the name of the file to be created. The program to do this, :ref:`cp
+<cp>`, expects the first argument to be the name of the file to be copied, and
+the second argument to be the name of the duplicate file to be created. If it
+does not find two arguments, it will produce an error message.
 
 Note that some programs may accept a number of arguments, but use default
 values if they are omitted (example of these are :ref:`cd <cd>` and :ref:`ls

@@ -22,7 +22,10 @@ to relay it to the shell or the command currently executing. In both cases,
 the input and ouput consists merely of a stream of *bytes*. Some of these
 characters correspond to printable characters, others to non-printable
 characters (e.g. carriage return, newline, ...), and yet others to
-*sequences* that might carry special meaning (e.g. the `VT100 Terminal Control sequences <http://www.termsys.demon.co.uk/vtansi.htm>`_). You might see some of these garbled sequences of characters when output intended for the terminal is instead written to file.
+*sequences* that might carry special meaning (e.g. the `VT100 Terminal Control
+sequences <http://www.termsys.demon.co.uk/vtansi.htm>`_). You might see some of
+these garbled sequences of characters when output intended for the terminal is
+instead written to file.
 
 The shell
 ---------
@@ -108,9 +111,28 @@ you provide will be send to it, and any output it produces will be
 displayed in the terminal. It also has access to your list of command-line
 arguments, and will perform its actions based on what it finds there. 
 
-It is important to note that how the command interprets the arguments it's been given is *entirely* up to the command itself -- or rather, up to the command's developer. This means that different commands will adopt slightly different conventions as to how their arguments are expected to be provided. Some commands expect all :ref:`command-line options <cmdopts>` to be provided before any of the main arguments, and others don't. Some commands expect options to be provided in short form (e.g. ``ls -l``), other in long form (e.g. ``git --help``), others will accept a mixture of both (some short, some long), and yet others may accept both forms for the *same* option (e.g. ``cp -f`` is equivalent to ``cp --force``). There are accepted conventions, but this by no means implies that all developers will abide by them. 
+It is important to note that how the command interprets the arguments it's been
+given is *entirely* up to the command itself -- or rather, up to the command's
+developer. This means that different commands will adopt slightly different
+conventions as to how their arguments are expected to be provided. Some
+commands expect all :ref:`command-line options <cmdopts>` to be provided before
+any of the main arguments, and others don't. Some commands expect options to be
+provided in short form (e.g. ``ls -l``), other in long form (e.g. ``git
+--help``), others will accept a mixture of both (some short, some long), and
+yet others may accept both forms for the *same* option (e.g. ``cp -f`` is
+equivalent to ``cp --force``). There are accepted conventions, but this by no
+means implies that all developers will abide by them. 
 
-Another potential source of information that the executable will have access to is via *environment variables* (the ``PATH`` is one such variable). This allows the user to set a variable, which the command can query as it is executing. This might be to specify the location of important configuration files, or the number of threads that the application is expected to run, etc. In general, this is reserved for information that is unlikely to change very often, allowing the user to set this information once within the shell's startup file (typically ``~/.bashrc``), and no longer have to worry about it. For example, adding this line in ``~/.bashrc`` means that applications can query this variable at runtime:
+Another potential source of information that the executable will have access to
+is via *environment variables* (the ``PATH`` is one such variable). This allows
+the user to set a variable, which the command can query as it is executing.
+This might be to specify the location of important configuration files, or the
+number of threads that the application is expected to run, etc. In general,
+this is reserved for information that is unlikely to change very often,
+allowing the user to set this information once within the shell's startup file
+(typically ``~/.bashrc``), and no longer have to worry about it. For example,
+adding this line in ``~/.bashrc`` means that applications can query this
+variable at runtime:
 
 .. code-block:: bash
 
@@ -127,7 +149,14 @@ the system may start to make more sense. For instance, there are many terminal
 programs available, from raw VT100 terminals, to various graphical ones, all
 with various levels of functionality (e.g. multiple tabs, split display,
 transparent background, unlimited scrollback, etc.).
-But within these various terminals, you will generally be running the same *shell*, and it'll behave the same way no matter which terminal it is running in. However, if you log into a different system, you may find subtle differences in the way it behaves (different prompts, some keyboard shortcuts that work differently, etc.). You may also find that the default shell you are logging in with is different on different system: some HPC systems are configured with the C shell as the default, and its syntax can be quite different. But at heart, the concepts outlined here will be the same. 
+But within these various terminals, you will generally be running the same
+*shell*, and it'll behave the same way no matter which terminal it is running
+in. However, if you log into a different system, you may find subtle
+differences in the way it behaves (different prompts, some keyboard shortcuts
+that work differently, etc.). You may also find that the default shell you are
+logging in with is different on different system: some HPC systems are
+configured with the C shell as the default, and its syntax can be quite
+different. But at heart, the concepts outlined here will be the same. 
 
 It's also important to understand what the shell will do to your command as
 it's interpreting it, and what arguments this will translate to once passed to
@@ -143,6 +172,7 @@ this will now be printed on the terminal. For example:
 
 might come in handy to see that the ``files.txt`` file will also be copied,
 when that might not have been intended. This trick is particularly useful when
-performing more advanced substitutions, as you'll see in the :ref:`examples` page.
+performing more advanced substitutions, as you'll see in the :ref:`advanced`
+page.
 
 

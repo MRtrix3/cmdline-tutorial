@@ -36,8 +36,8 @@ guaranteed to work in all cases.
 The information below relates to the Bourne Again shell (BASH), and will
 hopefully be representative of most systems (see the `official BASH
 documentation
-<https://www.gnu.org/software/bash/manual/html_node/Bash-Startup-Files.html>`_ for full details). The relevant files would be
-different for different shells:
+<https://www.gnu.org/software/bash/manual/html_node/Bash-Startup-Files.html>`_
+for full details). The relevant files would be different for different shells:
 
 - *login* shells will typically read the system-wide ``/etc/profile`` if it
   exists, then the user-specific ``~/.profile`` or ``~/.bash_profile`` if it
@@ -94,7 +94,9 @@ Useful readline customisations
 ------------------------------
 
 Most distributions will come with the following already set, but just in case,
-the following is useful to put into your ``~/.inputrc`` if your Home, End, or Del keys don't work, and if you want to be able to skip over words with Ctrl+Left/Right::
+the following is useful to put into your ``~/.inputrc`` if your Home, End, or
+Del keys don't work, and if you want to be able to skip over words with
+Ctrl+Left/Right::
 
   # mappings for Home/End:
   "\e[1~": beginning-of-line
@@ -119,7 +121,7 @@ respectively. I find a more useful use for the Up & Down arrows is to perform
 a *search* through the history. If nothing has been typed yet, this just goes
 through the history as is normally the case. But as soon as a few characters
 have been entered, only those commands in the history that start with the same
-sequence will come up when you press Up. This allows you to quickly retrieve a
+fragment will come up when you press Up. This allows you to quickly retrieve a
 command you might have typed quite some time ago, as long as you know how it
 started::
 
@@ -127,5 +129,9 @@ started::
   "\e[A": history-search-backward
   "\e[B": history-search-forward
 
-For example, if you set a complicated environment variable at the beginning of your session, but now need to modify its value slightly, you could just type ``exp`` followed by the Up arrow key, and the chances are the first match will the ``export COMPLICATED_VARIABLE=some_other_complicated_value`` line that you wanted to edit -- no need to type it all in again...
+For example, if you set a complicated environment variable at the beginning of
+your session, but now need to modify its value slightly, you could just type
+``exp`` followed by the Up arrow key, and the chances are the first match will
+be the ``export COMPLICATED_VARIABLE=some_other_complicated_value`` line that
+you wanted to edit -- no need to type it all in again...
 
