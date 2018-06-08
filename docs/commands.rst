@@ -104,7 +104,7 @@ Options:
 
 - ``-i``
 
-  ask for confirmation before overwriting any files (default for MR2).
+  ask for confirmation before overwriting any files.
 
 - ``-r``
 
@@ -135,7 +135,7 @@ Options:
 
 - ``-i``
 
-  ask for confirmation before overwriting any files (default for MR2).
+  ask for confirmation before overwriting any files.
 
 
 Examples of typical command use
