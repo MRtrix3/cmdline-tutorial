@@ -99,6 +99,8 @@ the command name, corresponding to a real program to be executed. All other
 'words' will eventually be passed to the program as arguments that should
 provide it with enough information to perform what is intended.
 
+.. _cmdargs:
+
 Command line arguments
 ......................
 
@@ -119,6 +121,8 @@ values if they are omitted (example of these are :ref:`cd <cd>` and :ref:`ls
 <ls>`). Other programs may accept variable numbers of arguments, and process
 each argument in turn.
 
+
+.. _cmdopts:
 
 Command line options
 ....................
@@ -174,6 +178,8 @@ prompt):
   
     $ mrconvert source.mif -vox 1.25,1,1 -datatype float32 dest.nii
   
+
+.. _spaces:
 
 Dealing with spaces in arguments
 --------------------------------

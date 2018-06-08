@@ -72,6 +72,7 @@ boils down to providing a unique, unambiguous *path* to the file.
 
   In this context, *directory* and *folder* are synonymous.
 
+.. _abspath:
 
 Absolute paths
 --------------
@@ -110,6 +111,8 @@ spring from that branch.
 
 Your working directory can be specified with the command :ref:`cd <cd>`, and queried using
 the command :ref:`pwd <pwd>` (both described in :ref:`commands`).
+
+.. _relpath:
 
 Relative paths
 --------------

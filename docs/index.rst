@@ -8,6 +8,7 @@ A brief introduction to the Unix command-line
    introduction
    paths
    commands
+   inner_workings
    customising
    examples
    tips
