@@ -156,7 +156,7 @@ Special filenames
 A few shortcuts have special significance, and you should learn to use them, or
 at least know of them. These are:
 
-- ``~`` (tilda):
+- ``~`` (tilde):
 
   shorthand for your home folder. For example, I could refer to the ``project``
   folder as ``~/data/project``, since my home folder is ``/home/donald``.

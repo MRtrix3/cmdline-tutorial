@@ -162,17 +162,18 @@ It's also important to understand what the shell will do to your command as
 it's interpreting it, and what arguments this will translate to once passed to
 the executable itself. A useful trick here is to prefix your intended command
 with ``echo``: the shell will perform all the variable substitute and wildcard
-expasion that it normally would, but because ``echo`` is now the command, all
-this will now be printed on the terminal. For example:
+expansion that it normally would, but because ``echo`` is now the command, all
+this will now simply be printed on the terminal. For example:
 
 .. code-block:: console
 
   $ echo cp files*.txt destination/
   cp file.txt file_1.txt file_2.txt file_3.txt destination/
 
-might come in handy to see that the ``files.txt`` file will also be copied,
-when that might not have been intended. This trick is particularly useful when
-performing more advanced substitutions, as you'll see in the :ref:`advanced`
-page.
+Note that the command itself is not executed; it is merely displayed as it
+would have been interpreted by the shell. This might come in handy to see that
+the ``files.txt`` file will also be copied, when that might not have been
+intended.  This trick is particularly useful when performing more advanced
+substitutions, as you'll see in the :ref:`advanced` page.
 
 

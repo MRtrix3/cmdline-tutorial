@@ -159,7 +159,7 @@ need to refer back to the sections on :ref:`paths`, using special filenames, or 
 
     $ cd ~/data
 
-- To list the headers for all images (with the ``.png`` suffix) whose filename start
+- To list all images (with the ``.png`` suffix) whose filename start
   with ``ns`` from the ``controls`` folder:
   
   .. code-block:: console
@@ -185,10 +185,11 @@ need to refer back to the sections on :ref:`paths`, using special filenames, or 
 
   .. code-block:: console
   
-    $ cp ~/data/*.hdr scripts/
+    $ cp ~/data/*.sh scripts/
 
 - To copy all images for study 3 of patient *Joe Bloggs* from the ``/data``
-  folder into the current working directory:
+  folder into the current working directory (assuming the images are named
+  according to the convention ``ID-study-slice.ima``):
 
   .. code-block:: console
 
