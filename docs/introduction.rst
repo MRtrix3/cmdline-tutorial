@@ -35,7 +35,7 @@ An important point to note is that Unix is case-sensitive: a file called
 
 The command line prompt can vary from system to system, but usually consists of
 some text followed by the ``$`` character. In many systems, it might look like
-this: 
+this:
 
 .. code-block:: console
 
@@ -62,32 +62,32 @@ system.
     shells available, each with their own syntax rules. The default shell in
     most Linux distributions is the Bourne Again Shell (bash). This is also the
     default on macOS and MSYS2 (used in Windows installations), and for this
-    reason is the default assumed in this guide. 
+    reason is the default assumed in this guide.
 
   - the **terminal**: the program responsible for displaying the output of the
     shell, and what the user types in. There are a number of different
-    terminals available, each with different levels of sophistication. 
+    terminals available, each with different levels of sophistication.
 
   This leads to a bewildering array of combinations between the different
   shells and terminal programs available. Nonetheless, the general principles
-  are fairly universal. 
+  are fairly universal.
 
 
 How to access the command line
 ------------------------------
 
 There are many ways to start a command line session, depending on your OS and
-desktop environment. 
+desktop environment.
 
 - **GNU/Linux**
 
-  Different Linux distributions include different `desktop environments <de>`_.
+  Different Linux distributions include different desktop environments.
   For instance `Ubuntu <https://www.ubuntu.com/>`_ installations will typically
   be running `Unity <https://unity.ubuntu.com/>`_, `Red Hat
   <https://www.redhat.com/>`_ and derivatives will typically be running `GNOME
   <https://www.gnome.org/>`_, while `SuSE <https://www.suse.com/>`_ would
-  typically come with `KDE <https://www.kde.org/>`_. 
-  
+  typically come with `KDE <https://www.kde.org/>`_.
+
   Given the many different possible configurations, it is impossible to give
   specific instructions for each case. Nonetheless, in general you ought to be
   able to identify an application called 'Terminal' or similar in the desktop's
@@ -103,7 +103,7 @@ desktop environment.
   You will need to use the MSYS2 *MinGW-w64 Win64* shell, either by
   double-clicking on the shortcut (on the Desktop or in the Start menu), or by
   searching for it (hit the Windows key and start typing 'MSYS2' -- it should
-  show up in the list of applications displayed). 
+  show up in the list of applications displayed).
 
 Basic Structure of a command
 ----------------------------
@@ -164,35 +164,35 @@ prompt):
 - To list the contents of the current working directory:
 
   .. code-block:: console
-  
+
     $ ls
-  
+
 - To list the contents of the current working directory, along with the file
   permissions, owner, size and modification date:
-  
+
   .. code-block:: console
-  
+
     $ ls -l
-  
+
 - To copy the file ``source``, creating the file ``dest``:
-  
+
   .. code-block:: console
-  
+
     $ cp source dest
-  
+
 - To convert image ``source.mif`` (*MRtrix* format) into image ``dest.nii`` (NIfTI format):
-  
+
   .. code-block:: console
-  
+
     $ mrconvert source.mif dest.nii
 
 - To convert image ``source.mif`` into image ``dest.nii``, changing the voxel
   size to 1.25 x 1 x 1 mm and changing the datatype to 32-bit floating-point:
-  
+
   .. code-block:: console
-  
+
     $ mrconvert source.mif -vox 1.25,1,1 -datatype float32 dest.nii
-  
+
 
 .. _spaces:
 
@@ -203,19 +203,69 @@ As previously mentioned, the command actually typed in will first be split up
 into *tokens* using spaces as delimiters. In certain cases, it may be necessary
 to provide arguments that contain spaces within them. A common example of this
 is when file names contain spaces (note that this should be avoided, especially
-since other programs and scripts often have issues dealing with these).  This
+since other programs and scripts often have issues dealing with these). This
 is obviously a problem, since an argument with a space in it will be
-interpreted as two separate arguments.  To supply an argument with a space in
+interpreted as two separate arguments. To supply an argument with a space in
 it, use the following syntax.
 
 As an example, if we need to supply the argument "argument with spaces" to some
 command, we can use any of the following:
 
--  ``'argument with spaces'``
-- ``"argument with spaces"``
 - ``argument\ with\ spaces``
+- ``'argument with spaces'``
+- ``"argument with spaces"``
 
-In the last example, the backslash character tells the shell to ignore the
+In the first example, the backslash character tells the shell to ignore the
 subsequent space character and treat it as a normal character.
 
 
+.. _escaping:
+
+Escaping special characters
+---------------------------
+
+We have already seen that spaces are treated differently from other characters
+and need to be encapsulated by quotes ``', "`` or escaped by a preceding ``\,``
+to not be interpreted by the shell as token delimiters. You will most likely
+also encounter other special characters such as ``!#$^&*?[](){}<>~;|`` in more
+`advanced <advanced>`_ usages; these come in handy for instance for processing
+multiple files using `wildcard characters <wildcards>`_.
+
+One can influence the way the shell interprets these special characters by quoting and escaping the input. For instance, the string
+``'argument with spaces'`` uses single-quotes (strong quoting), everything
+between the two ``'``  symbols is treated as literal characters without
+special meaning. In the command below the series of special characters are
+treated as a simple string and printed to the terminal via the command
+:ref:`echo <echo>`.
+
+ .. code-block:: console
+
+    $ echo look how ordinary these characters are: '!#$^&*?[](){}<>~;|\'
+
+Unless encapsulated in single quotes, individual special characters can also be
+marked to loose their special meaning using the backslash. For instance,
+``\'argument with spaces\'`` would expand to three arguments ``'argument``,
+``with``, and ``spaces'``. The only exception to this rule is the newline
+character which allows to write commands that span across multiple lines.
+
+ .. code-block:: console
+
+    $ echo look how ordinary these characters are: '!#$^&*?[](){}<>~;|\' \
+    and \'
+
+Double quotes ``"`` are used for "weak" quoting, which escapes all characters
+expect for ``\``, ``$`` and itself. This allows to deactivate some of the
+shell's interpretations (spaces, single-quotes, pattern matching, pathname
+expansions) while others remain active (such as parameter expansion ``$``).
+
+ .. code-block:: console
+
+    $ ls -l "$HOME/folder with spaces"
+
+Note that special characters' meaning can be shell- and context-dependent.
+For example, in the Bourne Again Shell (bash), the string ``filename[].mif``
+is not interpreted but in the Z shell (zsh, the default shell for new user
+accounts since macOS version 10.15), the '[' needs to be quoted
+``"filename[].mif"`` or escaped using a backslash ``filename\[].mif``.
+
+For more information, consult your shell's man page or this overview `post <https://unix.stackexchange.com/a/296147>`_,

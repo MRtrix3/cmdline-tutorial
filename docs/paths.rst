@@ -161,7 +161,7 @@ at least know of them. These are:
   shorthand for your home folder. For example, I could refer to the ``project``
   folder as ``~/data/project``, since my home folder is ``/home/donald``.
 
-- ``.`` (single full stop): 
+- ``.`` (single full stop):
 
   the current directory. For example, if my current working directory is
   ``/home/donald``, I can refer to the ``project`` folder by specifying
@@ -169,7 +169,7 @@ at least know of them. These are:
   very useful, there are occasions when it becomes important (see examples
   below).
 
-- ``..`` (double full stop): 
+- ``..`` (double full stop):
 
   the parent folder of the current directory. For example, if my current
   working directory is ``/home/donald/Desktop``, I can still refer to the
@@ -181,6 +181,8 @@ at least know of them. These are:
     ../../donald/data
     ../Documents/../data
     ~/Desktop/../data
+
+.. _wildcards:
 
 Using wildcards
 ---------------
@@ -224,7 +226,7 @@ this case, we could type:
   file1.txt   file2.txt   file3.txt
 
 This use of wildcards becomes very useful when dealing with folders containing
-large numbers of similar files, and only a subgroup of them is of interest. 
+large numbers of similar files, and only a subgroup of them is of interest.
 
 .. NOTE::
 

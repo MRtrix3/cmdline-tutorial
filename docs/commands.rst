@@ -12,7 +12,7 @@ followed by a number of arguments. Arguments given in square brackets are
 optional and can be omitted. If an argument is followed by three dots ('...'),
 it means that any number of that type of argument can be provided, and each
 will be processed in turn. In addition, any options that are of particular
-interest are listed in the corresponding section for each command. 
+interest are listed in the corresponding section for each command.
 
 
 .. _pwd:
@@ -38,7 +38,7 @@ Print the current working directory onto the screen.
 
 Change the current working directory. If no folder is specified, the current
 working directory will be set to the home folder. Otherwise, it will be set to
-``folder``, assuming that it is a valid path.  
+``folder``, assuming that it is a valid path.
 
 Note that in this command, the token ``-`` has special meaning when passed
 instead of ``folder``: it refers to the previous working directory. This can be
@@ -53,7 +53,7 @@ useful to rapidly change back and forth between folders, e.g.:
   ...         # do something useful
 
   $ cd -      # switch back to /home/donald/Documents when you're done
-  
+
 
 
 .. _ls:
@@ -73,7 +73,7 @@ contents will be listed.
 Options:
 
 - ``-a``
-  
+
   list all files, including hidden files (hidden files are those that start with a full stop '.').
 
 - ``-l``
@@ -138,6 +138,21 @@ Options:
   ask for confirmation before overwriting any files.
 
 
+.. _echo:
+
+``echo``: output strings to the terminal
+----------------------------------------
+
+.. code-block:: console
+
+  $ echo [option]... [string]...
+
+
+The echo command writes any specified arguments, separated by single space
+characters and followed by a newline (``\n``) character to the standard output.
+
+
+
 Examples of typical command use
 -------------------------------
 
@@ -148,7 +163,7 @@ need to refer back to the sections on :ref:`paths`, using special filenames, or 
 - To change your current working directory to its parent folder (move one branch down the directory tree):
 
   .. code-block:: console
-  
+
     $ cd ..
 
 
@@ -161,7 +176,7 @@ need to refer back to the sections on :ref:`paths`, using special filenames, or 
 
 - To list all images (with the ``.png`` suffix) whose filename start
   with ``ns`` from the ``controls`` folder:
-  
+
   .. code-block:: console
 
     $ ls controls/ns*.png
@@ -173,7 +188,7 @@ need to refer back to the sections on :ref:`paths`, using special filenames, or 
 
     $ mv data.mat ..
 
-  
+
 - To copy the file ``info.txt`` from the folder ``important`` into the current working directory:
 
   .. code-block:: console
@@ -184,7 +199,7 @@ need to refer back to the sections on :ref:`paths`, using special filenames, or 
   directory into the ``scripts`` folder in the current working directory:
 
   .. code-block:: console
-  
+
     $ cp ~/data/*.sh scripts/
 
 - To copy all images for study 3 of patient *Joe Bloggs* from the ``/data``
