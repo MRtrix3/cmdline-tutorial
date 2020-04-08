@@ -226,13 +226,15 @@ Escaping special characters
 
 We have already seen that spaces are treated differently from other characters
 and need to be encapsulated by quotes ``', "`` or escaped by a preceding ``\,``
-to not be interpreted by the shell as token delimiters. You will most likely
-also encounter other special characters such as ``!#$^&*?[](){}<>~;|`` in more
-`advanced <advanced>`_ usages; these come in handy for instance for processing
-multiple files using `wildcard characters <wildcards>`_.
+to prevent them being interpreted by the shell as token delimiters. You will
+most likely also encounter other special characters such as
+``!#$^&*?[](){}<>~;|`` in more `advanced <advanced>`_ usages; these come in
+handy for instance for processing multiple files using 
+`wildcard characters <wildcards>`_.
 
-One can influence the way the shell interprets these special characters by quoting and escaping the input. For instance, the string
-``'argument with spaces'`` uses single-quotes (strong quoting), everything
+One can influence the way the shell interprets these special characters by
+quoting and escaping the input. For instance, the string ``'argument with
+spaces'`` uses single-quotes (*strong quoting*): this means that everything
 between the two ``'``  symbols is treated as literal characters without
 special meaning. In the command below the series of special characters are
 treated as a simple string and printed to the terminal via the command
@@ -243,20 +245,20 @@ treated as a simple string and printed to the terminal via the command
     $ echo look how ordinary these characters are: '!#$^&*?[](){}<>~;|\'
 
 Unless encapsulated in single quotes, individual special characters can also be
-marked to loose their special meaning using the backslash. For instance,
+marked to lose their special meaning using the backslash. For instance,
 ``\'argument with spaces\'`` would expand to three arguments ``'argument``,
 ``with``, and ``spaces'``. The only exception to this rule is the newline
-character which allows to write commands that span across multiple lines.
+character, which allows commands to span across multiple lines:
 
  .. code-block:: console
 
     $ echo look how ordinary these characters are: '!#$^&*?[](){}<>~;|\' \
     and \'
 
-Double quotes ``"`` are used for "weak" quoting, which escapes all characters
-expect for ``\``, ``$`` and itself. This allows to deactivate some of the
-shell's interpretations (spaces, single-quotes, pattern matching, pathname
-expansions) while others remain active (such as parameter expansion ``$``).
+Double quotes ``"`` are used for *weak quoting*, which escapes all characters
+expect for ``\``, ``$`` and itself. This disables some of the shell's
+interpretations (spaces, single-quotes, pattern matching, pathname expansions)
+while others remain active (such as parameter expansion ``$``).
 
  .. code-block:: console
 
@@ -265,7 +267,7 @@ expansions) while others remain active (such as parameter expansion ``$``).
 Note that special characters' meaning can be shell- and context-dependent.
 For example, in the Bourne Again Shell (bash), the string ``filename[].mif``
 is not interpreted but in the Z shell (zsh, the default shell for new user
-accounts since macOS version 10.15), the '[' needs to be quoted
+accounts since macOS version 10.15), the opening ``[`` needs to be quoted
 ``"filename[].mif"`` or escaped using a backslash ``filename\[].mif``.
 
 For more information, consult your shell's man page or this overview `post <https://unix.stackexchange.com/a/296147>`_,
