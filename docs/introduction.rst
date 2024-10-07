@@ -20,7 +20,7 @@ What is the command-line?
 -------------------------
 
 The command line is simply a way of passing instructions to the computer. It is
-a text-only interface, and commands are supplied to the shell by typing them in
+a text-only interface, and commands are supplied by typing them in
 and pressing the return key. Any output produced by these commands is printed
 out on the same text interface. Although daunting at first, the command line
 provides a very rich interface to the available functionality, and it is worth
@@ -146,10 +146,10 @@ There is a special type of argument that you might encounter, often referred to
 as a command line option or switch. The purpose of these optional arguments is
 to modify the behaviour of the program in some way. Command line options always
 start with a minus symbol to distinguish them from normal arguments. For
-example, passing the appropriate option (``-l``) to the :ref:`ls <ls>` command
+example, passing the (``-l``) option to the :ref:`ls <ls>` command
 when listing the files in the current folder will produce a longer listing,
 including information such as file size and modification time as well as the
-file names normally output.
+file names normally shown.
 
 Command line options can also require additional arguments. In this case, these
 additional arguments should be entered immediately after the option itself --
@@ -216,7 +216,7 @@ command, we can use any of the following:
 - ``"argument with spaces"``
 
 In the first example, the backslash character tells the shell to ignore the
-subsequent space character and treat it as a normal character.
+subsequent space character and treat it like any other printable character.
 
 
 .. _escaping:
@@ -225,7 +225,7 @@ Escaping special characters
 ---------------------------
 
 We have already seen that spaces are treated differently from other characters
-and need to be encapsulated by quotes ``', "`` or escaped by a preceding ``\,``
+and need to be encapsulated by quotes ``'``, ``"`` or escaped by a preceding ``\``
 to prevent them being interpreted by the shell as token delimiters. You will
 most likely also encounter other special characters such as
 ``!#$^&*?[](){}<>~;|`` in more `advanced <advanced>`_ usages; these come in
@@ -264,10 +264,10 @@ while others remain active (such as parameter expansion ``$``).
 
     $ ls -l "$HOME/folder with spaces"
 
-Note that special characters' meaning can be shell- and context-dependent.
+Note that the meaning of special characters can be shell- and context-dependent.
 For example, in the Bourne Again Shell (bash), the string ``filename[].mif``
 is not interpreted but in the Z shell (zsh, the default shell for new user
 accounts since macOS version 10.15), the opening ``[`` needs to be quoted
 ``"filename[].mif"`` or escaped using a backslash ``filename\[].mif``.
 
-For more information, consult your shell's man page or this overview `post <https://unix.stackexchange.com/a/296147>`_,
+For more information, consult your shell's man page or this overview `post <https://unix.stackexchange.com/a/296147>`_.
