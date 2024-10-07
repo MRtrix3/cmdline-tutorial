@@ -16,7 +16,7 @@ The terminal
 ------------
 
 The terminal's role is purely one of user *input and output*: it displays the
-output produced by the shell or the command current executing within it, and
+output produced by the shell or the command currently executing within it, and
 receives input from the user via the keyboard (and potentially the mouse too)
 to relay it to the shell or the command currently executing. In both cases,
 the input and ouput consists merely of a stream of *bytes*. Some of these
