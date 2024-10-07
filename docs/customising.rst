@@ -16,7 +16,7 @@ Startup files
 
 All of these modifications are typically implemented by adding the relevant
 commands to the shell's various startup files. Part of the difficulty in
-getting these modifications to work lie in figuring which file gets executed
+getting these modifications to work lie in figuring out which file gets executed
 under what circumstances, and what settings this file affects.
 
 When the shell starts, it will typically be invoked as a *login* or *non-login*
@@ -46,7 +46,7 @@ for full details). The relevant files would be different for different shells:
 - *non-login* shells will typically read the ``~/.bashrc`` file if it exists. 
 
 - on many distributions, the system-wide ``/etc/profile`` will contain
-  instructions to read the system-wde ``/etc/bash.bashrc`` file if it exists.
+  instructions to read the system-wide ``/etc/bash.bashrc`` file if it exists.
 
 - likewise, on many distributions, the user ``~/.profile`` will contain
   instructions to run the user ``~/.bashrc`` file if found.
