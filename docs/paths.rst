@@ -193,7 +193,7 @@ the shell to find all filenames that match the wildcard, and expand them on the
 command line. Although there are a number of wildcards, the only one that will
 be detailed here is the ``*`` character.
 
-The ``*`` character essentially means 'any number or any characters'. When the
+The ``*`` character essentially means 'any number of any characters'. When the
 shell encounters this character in an argument, it will look for any files that
 match that pattern, and append them one after the other where the original
 pattern used to be. This can be better understood using some examples.
